@@ -1,6 +1,6 @@
 export declare class CreateUserDto {
-    firstName: string;
-    lastName: string;
+    email: string;
     password: string;
-    isActive: boolean;
+    user_type: string;
+    subscription_id: number;
 }
