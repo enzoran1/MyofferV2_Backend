@@ -4,23 +4,23 @@ import { UpdateJobboardDto } from './dto/update-jobboard.dto';
 
 @Injectable()
 export class JobboardService {
-  createJobboard(createJobboardDto: CreateJobboardDto) {
-    // Implémentez la logique de création d'un jobboard ici
+  create(createJobboardDto: CreateJobboardDto) {
+    return 'This action adds a new jobboard';
   }
 
-  getAllJobboards() {
-    // Implémentez la logique pour récupérer tous les jobboards ici
+  findAll() {
+    return `This action returns all jobboard`;
   }
 
-  getJobboardById(id: string) {
-    // Implémentez la logique pour récupérer un jobboard par son ID ici
+  findOne(id: number) {
+    return `This action returns a #${id} jobboard`;
   }
 
-  updateJobboard(id: string, updateJobboardDto: UpdateJobboardDto) {
-    // Implémentez la logique de mise à jour d'un jobboard ici
+  update(id: number, updateJobboardDto: UpdateJobboardDto) {
+    return `This action updates a #${id} jobboard`;
   }
 
-  deleteJobboard(id: string) {
-    // Implémentez la logique de suppression d'un jobboard ici
+  remove(id: number) {
+    return `This action removes a #${id} jobboard`;
   }
 }

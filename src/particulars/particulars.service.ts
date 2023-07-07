@@ -3,24 +3,24 @@ import { CreateParticularDto } from './dto/create-particular.dto';
 import { UpdateParticularDto } from './dto/update-particular.dto';
 
 @Injectable()
-export class ParticularService {
-  createParticular(createParticularDto: CreateParticularDto) {
-    // Implémentez la logique de création d'un particulier ici
+export class ParticularsService {
+  create(createParticularDto: CreateParticularDto) {
+    return 'This action adds a new particular';
   }
 
-  getAllParticulars() {
-    // Implémentez la logique pour récupérer tous les particuliers ici
+  findAll() {
+    return `This action returns all particulars`;
   }
 
-  getParticularById(id: string) {
-    // Implémentez la logique pour récupérer un particulier par son ID ici
+  findOne(id: number) {
+    return `This action returns a #${id} particular`;
   }
 
-  updateParticular(id: string, updateParticularDto: UpdateParticularDto) {
-    // Implémentez la logique de mise à jour d'un particulier ici
+  update(id: number, updateParticularDto: UpdateParticularDto) {
+    return `This action updates a #${id} particular`;
   }
 
-  deleteParticular(id: string) {
-    // Implémentez la logique de suppression d'un particulier ici
+  remove(id: number) {
+    return `This action removes a #${id} particular`;
   }
 }

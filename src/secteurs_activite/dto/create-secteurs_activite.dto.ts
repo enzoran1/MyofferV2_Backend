@@ -1,5 +1,1 @@
-export class CreateSecteurActiviteDto {
-    name: string;
-    categoryId: number;
-  }
-  
+export class CreateSecteursActiviteDto {}

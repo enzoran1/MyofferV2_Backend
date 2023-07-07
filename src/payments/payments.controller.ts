@@ -1,12 +1,34 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { PaymentService } from './payments.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { PaymentsService } from './payments.service';
+import { CreatePaymentDto } from './dto/create-payment.dto';
+import { UpdatePaymentDto } from './dto/update-payment.dto';
 
 @Controller('payments')
-export class PaymentController {
-  constructor(private readonly paymentService: PaymentService) {}
+export class PaymentsController {
+  constructor(private readonly paymentsService: PaymentsService) {}
+
+  @Post()
+  create(@Body() createPaymentDto: CreatePaymentDto) {
+    return this.paymentsService.create(createPaymentDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.paymentsService.findAll();
+  }
 
   @Get(':id')
-  getPaymentById(@Param('id') id: string) {
-    return this.paymentService.getPaymentById(id);
+  findOne(@Param('id') id: string) {
+    return this.paymentsService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updatePaymentDto: UpdatePaymentDto) {
+    return this.paymentsService.update(+id, updatePaymentDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.paymentsService.remove(+id);
   }
 }

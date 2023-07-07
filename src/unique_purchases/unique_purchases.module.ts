@@ -5,15 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UniquePurchase } from './entities/unique_purchase.entity';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([UniquePurchase]),
-    // Autres modules importés
-  ],
+  imports: [TypeOrmModule.forFeature([UniquePurchase])],
   controllers: [UniquePurchasesController],
   providers: [UniquePurchasesService]
 })
 export class UniquePurchasesModule {}
-
-
-
-

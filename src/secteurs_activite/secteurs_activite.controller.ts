@@ -1,11 +1,16 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { SecteursActiviteService } from './secteurs_activite.service';
-import { CreateSecteurActiviteDto } from './dto/create-secteurs_activite.dto';
+import { CreateSecteursActiviteDto } from './dto/create-secteurs_activite.dto';
 import { UpdateSecteursActiviteDto } from './dto/update-secteurs_activite.dto';
 
 @Controller('secteurs-activite')
 export class SecteursActiviteController {
   constructor(private readonly secteursActiviteService: SecteursActiviteService) {}
+
+  @Post()
+  create(@Body() createSecteursActiviteDto: CreateSecteursActiviteDto) {
+    return this.secteursActiviteService.create(createSecteursActiviteDto);
+  }
 
   @Get()
   findAll() {
@@ -14,21 +19,16 @@ export class SecteursActiviteController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.secteursActiviteService.findOne(id);
+    return this.secteursActiviteService.findOne(+id);
   }
 
-  @Post()
-  create(@Body() createSecteurActiviteDto: CreateSecteurActiviteDto) {
-    return this.secteursActiviteService.create(createSecteurActiviteDto);
-  }
-
-  @Put(':id')
-  update(@Param('id') id: string, @Body() updateSecteurActiviteDto: UpdateSecteursActiviteDto) {
-    return this.secteursActiviteService.update(id, updateSecteurActiviteDto);
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateSecteursActiviteDto: UpdateSecteursActiviteDto) {
+    return this.secteursActiviteService.update(+id, updateSecteursActiviteDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.secteursActiviteService.remove(id);
+    return this.secteursActiviteService.remove(+id);
   }
 }

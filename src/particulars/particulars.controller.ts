@@ -1,34 +1,34 @@
-import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
-import { ParticularService } from './particulars.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { ParticularsService } from './particulars.service';
 import { CreateParticularDto } from './dto/create-particular.dto';
 import { UpdateParticularDto } from './dto/update-particular.dto';
 
 @Controller('particulars')
-export class ParticularController {
-  constructor(private readonly particularService: ParticularService) {}
+export class ParticularsController {
+  constructor(private readonly particularsService: ParticularsService) {}
 
   @Post()
-  createParticular(@Body() createParticularDto: CreateParticularDto) {
-    return this.particularService.createParticular(createParticularDto);
+  create(@Body() createParticularDto: CreateParticularDto) {
+    return this.particularsService.create(createParticularDto);
   }
 
   @Get()
-  getAllParticulars() {
-    return this.particularService.getAllParticulars();
+  findAll() {
+    return this.particularsService.findAll();
   }
 
   @Get(':id')
-  getParticularById(@Param('id') id: string) {
-    return this.particularService.getParticularById(id);
+  findOne(@Param('id') id: string) {
+    return this.particularsService.findOne(+id);
   }
 
   @Patch(':id')
-  updateParticular(@Param('id') id: string, @Body() updateParticularDto: UpdateParticularDto) {
-    return this.particularService.updateParticular(id, updateParticularDto);
+  update(@Param('id') id: string, @Body() updateParticularDto: UpdateParticularDto) {
+    return this.particularsService.update(+id, updateParticularDto);
   }
 
   @Delete(':id')
-  deleteParticular(@Param('id') id: string) {
-    return this.particularService.deleteParticular(id);
+  remove(@Param('id') id: string) {
+    return this.particularsService.remove(+id);
   }
 }

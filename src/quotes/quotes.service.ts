@@ -3,24 +3,24 @@ import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
 
 @Injectable()
-export class QuoteService {
-  createQuote(createQuoteDto: CreateQuoteDto) {
-    // Implémentez la logique de création d'un devis ici
+export class QuotesService {
+  create(createQuoteDto: CreateQuoteDto) {
+    return 'This action adds a new quote';
   }
 
-  getAllQuotes() {
-    // Implémentez la logique pour récupérer tous les devis ici
+  findAll() {
+    return `This action returns all quotes`;
   }
 
-  getQuoteById(id: string) {
-    // Implémentez la logique pour récupérer un devis par son ID ici
+  findOne(id: number) {
+    return `This action returns a #${id} quote`;
   }
 
-  updateQuote(id: string, updateQuoteDto: UpdateQuoteDto) {
-    // Implémentez la logique de mise à jour d'un devis ici
+  update(id: number, updateQuoteDto: UpdateQuoteDto) {
+    return `This action updates a #${id} quote`;
   }
 
-  deleteQuote(id: string) {
-    // Implémentez la logique de suppression d'un devis ici
+  remove(id: number) {
+    return `This action removes a #${id} quote`;
   }
 }

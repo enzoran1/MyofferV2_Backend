@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from './user/user.module';
-import { User } from './user/entities/user.entity';
+// importe les entités
+import { User } from './users/entities/user.entity';
 import { Particular } from './particulars/entities/particular.entity';
 import { Company } from './companies/entities/company.entity';
 import { Subscription } from './subscriptions/entities/subscription.entity';
@@ -16,9 +16,10 @@ import { Notification } from './notifications/entities/notification.entity';
 import { Payment } from './payments/entities/payment.entity';
 import { UniquePurchase } from './unique_purchases/entities/unique_purchase.entity';
 import { Category } from './categories/entities/category.entity';
-import { SecteurActivite } from './secteurs_activite/entities/secteurs_activite.entity';
+import { SecteursActivite } from './secteurs_activite/entities/secteurs_activite.entity';
+// importe les modules
 
-
+import { UsersModule } from './users/users.module';
 import { ParticularsModule } from './particulars/particulars.module';
 import { CompaniesModule } from './companies/companies.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
@@ -32,13 +33,15 @@ import { PaymentsModule } from './payments/payments.module';
 import { UniquePurchasesModule } from './unique_purchases/unique_purchases.module';
 import { CategoriesModule } from './categories/categories.module';
 import { SecteursActiviteModule } from './secteurs_activite/secteurs_activite.module';
+import { AuthModule } from './auth/auth.module';
+
+
+
+
 
 
 @Module({
   imports: [
-   
-
-
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -46,68 +49,27 @@ import { SecteursActiviteModule } from './secteurs_activite/secteurs_activite.mo
       username: 'root',
       password: '',
       database: 'MyOfferV2',
-      entities: [User, Particular, Company, Subscription, SubscriptionOption, Option, Quote, Jobboard, JobboardContact, Notification, Payment, UniquePurchase, Category, SecteurActivite],
+      entities: [User, Particular, Company, Subscription, SubscriptionOption, Option, Quote, Jobboard, JobboardContact, Notification, Payment, UniquePurchase, Category, SecteursActivite],
       synchronize: true,
     }),
-   
 
-
-    UserModule,
-   
-
-
+    UsersModule,
     ParticularsModule,
-   
-
-
     CompaniesModule,
-   
-
-
     SubscriptionsModule,
-   
-
-
     SubscriptionOptionsModule,
-   
-
-
     OptionsModule,
-   
-
-
     QuotesModule,
-   
-
-
     JobboardModule,
-   
-
-
     JobboardContactsModule,
-   
-
-
     NotificationsModule,
-   
-
-
     PaymentsModule,
-   
-
-
     UniquePurchasesModule,
-   
-
-
     CategoriesModule,
-   
-
-
     SecteursActiviteModule,
+    AuthModule,
+    
    
-
-
     
   ],
   controllers: [AppController],

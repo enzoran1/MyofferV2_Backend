@@ -3,24 +3,24 @@ import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
 
 @Injectable()
-export class CompanyService {
-  createCompany(createCompanyDto: CreateCompanyDto) {
-    // Implémentez la logique de création d'une entreprise ici
+export class CompaniesService {
+  create(createCompanyDto: CreateCompanyDto) {
+    return 'This action adds a new company';
   }
 
-  getAllCompanies() {
-    // Implémentez la logique pour récupérer toutes les entreprises ici
+  findAll() {
+    return `This action returns all companies`;
   }
 
-  getCompanyById(id: string) {
-    // Implémentez la logique pour récupérer une entreprise par son ID ici
+  findOne(id: number) {
+    return `This action returns a #${id} company`;
   }
 
-  updateCompany(id: string, updateCompanyDto: UpdateCompanyDto) {
-    // Implémentez la logique de mise à jour d'une entreprise ici
+  update(id: number, updateCompanyDto: UpdateCompanyDto) {
+    return `This action updates a #${id} company`;
   }
 
-  deleteCompany(id: string) {
-    // Implémentez la logique de suppression d'une entreprise ici
+  remove(id: number) {
+    return `This action removes a #${id} company`;
   }
 }

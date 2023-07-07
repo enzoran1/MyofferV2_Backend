@@ -1,35 +1,26 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { SecteurActivite } from './entities/secteurs_activite.entity';
-import { CreateSecteurActiviteDto } from './dto/create-secteurs_activite.dto';
+import { CreateSecteursActiviteDto } from './dto/create-secteurs_activite.dto';
 import { UpdateSecteursActiviteDto } from './dto/update-secteurs_activite.dto';
 
 @Injectable()
 export class SecteursActiviteService {
-  constructor(
-    @InjectRepository(SecteurActivite)
-    private readonly secteurActiviteRepository: Repository<SecteurActivite>,
-  ) {}
+  create(createSecteursActiviteDto: CreateSecteursActiviteDto) {
+    return 'This action adds a new secteursActivite';
+  }
 
   findAll() {
-    return this.secteurActiviteRepository.find();
+    return `This action returns all secteursActivite`;
   }
 
-  findOne(id: string) {
-    //return this.secteurActiviteRepository.findOne(id);
+  findOne(id: number) {
+    return `This action returns a #${id} secteursActivite`;
   }
 
-  create(createSecteurActiviteDto: CreateSecteurActiviteDto) {
-    const secteurActivite = this.secteurActiviteRepository.create(createSecteurActiviteDto);
-    return this.secteurActiviteRepository.save(secteurActivite);
+  update(id: number, updateSecteursActiviteDto: UpdateSecteursActiviteDto) {
+    return `This action updates a #${id} secteursActivite`;
   }
 
-  update(id: string, updateSecteurActiviteDto: UpdateSecteursActiviteDto) {
-    return this.secteurActiviteRepository.update(id, updateSecteurActiviteDto);
-  }
-
-  remove(id: string) {
-    return this.secteurActiviteRepository.delete(id);
+  remove(id: number) {
+    return `This action removes a #${id} secteursActivite`;
   }
 }

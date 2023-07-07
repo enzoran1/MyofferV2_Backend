@@ -1,12 +1,34 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { OptionService } from './options.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { OptionsService } from './options.service';
+import { CreateOptionDto } from './dto/create-option.dto';
+import { UpdateOptionDto } from './dto/update-option.dto';
 
 @Controller('options')
-export class OptionController {
-  constructor(private readonly optionService: OptionService) {}
+export class OptionsController {
+  constructor(private readonly optionsService: OptionsService) {}
+
+  @Post()
+  create(@Body() createOptionDto: CreateOptionDto) {
+    return this.optionsService.create(createOptionDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.optionsService.findAll();
+  }
 
   @Get(':id')
-  getOptionById(@Param('id') id: string) {
-    return this.optionService.getOptionById(id);
+  findOne(@Param('id') id: string) {
+    return this.optionsService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateOptionDto: UpdateOptionDto) {
+    return this.optionsService.update(+id, updateOptionDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.optionsService.remove(+id);
   }
 }

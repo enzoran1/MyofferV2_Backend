@@ -1,34 +1,34 @@
-import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
-import { QuoteService } from './quotes.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { QuotesService } from './quotes.service';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
 
 @Controller('quotes')
-export class QuoteController {
-  constructor(private readonly quoteService: QuoteService) {}
+export class QuotesController {
+  constructor(private readonly quotesService: QuotesService) {}
 
   @Post()
-  createQuote(@Body() createQuoteDto: CreateQuoteDto) {
-    return this.quoteService.createQuote(createQuoteDto);
+  create(@Body() createQuoteDto: CreateQuoteDto) {
+    return this.quotesService.create(createQuoteDto);
   }
 
   @Get()
-  getAllQuotes() {
-    return this.quoteService.getAllQuotes();
+  findAll() {
+    return this.quotesService.findAll();
   }
 
   @Get(':id')
-  getQuoteById(@Param('id') id: string) {
-    return this.quoteService.getQuoteById(id);
+  findOne(@Param('id') id: string) {
+    return this.quotesService.findOne(+id);
   }
 
   @Patch(':id')
-  updateQuote(@Param('id') id: string, @Body() updateQuoteDto: UpdateQuoteDto) {
-    return this.quoteService.updateQuote(id, updateQuoteDto);
+  update(@Param('id') id: string, @Body() updateQuoteDto: UpdateQuoteDto) {
+    return this.quotesService.update(+id, updateQuoteDto);
   }
 
   @Delete(':id')
-  deleteQuote(@Param('id') id: string) {
-    return this.quoteService.deleteQuote(id);
+  remove(@Param('id') id: string) {
+    return this.quotesService.remove(+id);
   }
 }

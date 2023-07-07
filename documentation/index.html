@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ba documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">ba documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
+<h2>Description</h2>
+<p><a href="https://github.com/nestjs/nest">Nest</a> framework TypeScript starter repository.</p>
+<h2>Installation</h2>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install</code></pre></div><h2>Running the app</h2>
+<div><pre class="line-numbers"><code class="language-bash"># development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod</code></pre></div><h2>Test</h2>
+<div><pre class="line-numbers"><code class="language-bash"># unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov</code></pre></div><h2>Support</h2>
+<p>Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you&#39;d like to join them, please <a href="https://docs.nestjs.com/support">read more here</a>.</p>
+<h2>Stay in touch</h2>
+<ul>
+<li>Author - <a href="https://kamilmysliwiec.com">Kamil Myśliwiec</a></li>
+<li>Website - <a href="https://nestjs.com/">https://nestjs.com</a></li>
+<li>Twitter - <a href="https://twitter.com/nestframework">@nestframework</a></li>
+</ul>
+<h2>License</h2>
+<p>Nest is <a href="LICENSE">MIT licensed</a>.</p>
+<h2>Doc fichiers</h2>
+<p>Lorsque vous générez les fichiers pour une entité, vous obtenez plusieurs fichiers qui sont utilisés pour organiser et structurer votre application. Voici une explication générale de chaque fichier généré :</p>
+<p>[{entite}.controller.spec.ts] : Ce fichier contient les tests unitaires pour le contrôleur de l&#39;entité. Les tests unitaires vous permettent de vérifier le bon fonctionnement des fonctionnalités du contrôleur.</p>
+<p>[{entite}.controller.ts] : Ce fichier contient la logique du contrôleur de l&#39;entité. Le contrôleur définit les différentes routes (endpoints) qui peuvent être appelées pour interagir avec l&#39;entité et appelle les méthodes correspondantes du service approprié.</p>
+<p>[{entite}.module.ts] : Ce fichier définit un module pour l&#39;entité. Les modules sont utilisés pour regrouper des fonctionnalités connexes de votre application. Le module contient les importations nécessaires, les fournisseurs de services et les contrôleurs associés à l&#39;entité.</p>
+<p>[{entite}.service.spec.ts] : Ce fichier contient les tests unitaires pour le service de l&#39;entité. Les tests unitaires vous permettent de vérifier le bon fonctionnement des fonctionnalités du service.</p>
+<p>[{entite}.service.ts] : Ce fichier contient la logique du service de l&#39;entité. Le service gère la logique métier de l&#39;entité, effectue les opérations de création, lecture, mise à jour et suppression (CRUD) sur les données liées à l&#39;entité.</p>
+<p>[create-{entite}.dto.ts] : Ce fichier définit le DTO (Data Transfer Object) utilisé pour créer une nouvelle instance de l&#39;entité. Le DTO spécifie les champs et les types de données attendus lors de la création de l&#39;entité.</p>
+<p>[update-{entite}.dto.ts] : Ce fichier définit le DTO utilisé pour mettre à jour une instance existante de l&#39;entité. Le DTO spécifie les champs et les types de données attendus lors de la mise à jour de l&#39;entité.</p>
+<p>[{entite}.entity.ts] : Ce fichier définit l&#39;entité qui représente la structure de la table correspondante dans la base de données. Il spécifie les colonnes de la table et leurs types de données, ainsi que les relations avec d&#39;autres entités, le cas échéant.</p>
+<p>[app.module.ts] (mise à jour) : Ce fichier est mis à jour pour inclure le module de l&#39;entité dans l&#39;application globale. Il ajoute l&#39;importation et l&#39;enregistrement du module de l&#39;entité dans la liste des modules utilisés par l&#39;application.</p>
+<p>Ces fichiers travaillent ensemble pour fournir une structure cohérente à votre application. Le contrôleur reçoit les requêtes HTTP, le service traite la logique métier, l&#39;entité définit la structure des données et les DTO facilitent le transfert des données entre les différentes couches de l&#39;application. Le module regroupe ces éléments connexes pour une gestion plus organisée et modulaire de votre application.</p>
+<h2>typeORM</h2>
+<p>TypeORM prend en charge plusieurs types de relations pour représenter les liens entre les entités dans une base de données relationnelle :</p>
+<p>[One-to-One] (un à un) avec @OneToOne : Cette relation indique qu&#39;une instance d&#39;une entité est liée à une seule instance d&#39;une autre entité. Dans ce cas, la clé étrangère est généralement placée dans l&#39;une des entités. L&#39;annotation @OneToOne est utilisée pour définir cette relation dans TypeORM.</p>
+<p>[Many-to-One] (plusieurs à un) avec @ManyToOne : Cette relation indique que plusieurs instances d&#39;une entité sont liées à une seule instance d&#39;une autre entité. Par exemple, plusieurs commentaires peuvent être associés à un seul article. La clé étrangère est généralement placée dans l&#39;entité &quot;many&quot;. L&#39;annotation @ManyToOne est utilisée pour définir cette relation dans TypeORM.</p>
+<p>[One-to-Many] (un à plusieurs) avec @OneToMany : Cette relation est l&#39;inverse de la relation Many-to-One. Elle indique qu&#39;une instance d&#39;une entité est liée à plusieurs instances d&#39;une autre entité. Par exemple, un utilisateur peut avoir plusieurs articles publiés. La clé étrangère est généralement placée dans l&#39;entité &quot;many&quot;. L&#39;annotation @OneToMany est utilisée pour définir cette relation dans TypeORM.</p>
+<p>[Many-to-Many] (plusieurs à plusieurs) avec @ManyToMany : Cette relation indique que plusieurs instances d&#39;une entité sont liées à plusieurs instances d&#39;une autre entité. Par exemple, plusieurs étudiants peuvent être inscrits à plusieurs cours. Dans ce cas, une table de jointure est généralement utilisée pour relier les deux entités. L&#39;annotation @ManyToMany est utilisée pour définir cette relation dans TypeORM.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
